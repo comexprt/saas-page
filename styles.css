@@ -207,7 +207,8 @@ summary::-webkit-details-marker{display:none}
 .billing-options{display:flex;align-items:center;justify-content:center;gap:6px}
 .billing-option{position:relative;display:flex;flex:0 1 98px;min-width:0;cursor:pointer}
 .billing-option input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
-.billing-option span{display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;padding:8px 12px;border:2px solid var(--green);border-radius:4px;color:var(--action-green);background:var(--white);line-height:1.2;transition:color .15s ease,background-color .15s ease}
+.billing-option span{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:100%;min-height:70px;padding:8px 12px;border:2px solid var(--green);border-radius:4px;color:var(--action-green);background:var(--white);line-height:1.2;transition:color .15s ease,background-color .15s ease}
+.billing-price{display:block;font-size:18px;font-weight:700;line-height:1.2;font-variant-numeric:tabular-nums;white-space:nowrap}
 .billing-option input:checked+span{color:var(--white);background:var(--action-green)}
 .billing-option:hover span{background:#eaf8ef}
 .billing-option input:checked+span,.billing-option input:checked:hover+span{background:var(--action-green)}
@@ -293,7 +294,7 @@ summary::-webkit-details-marker{display:none}
   .offer-hero h1{font-size:36px}
   .products-section{padding-left:24px;padding-right:24px}
   .product-card{padding:26px 20px 20px}
-  .billing-option span{min-height:38px}
+  .billing-option span{min-height:70px}
   .plan-card .card-heading{min-height:90px;margin-bottom:16px}
   .plan-card .card-heading p{margin-top:9px}
   .plan-card .support-heading{margin-top:10px}
