@@ -45,8 +45,11 @@
     <section class="products-section" id="products" aria-labelledby="products-title">
       <div class="products-container">
         <h2 class="section-intro" id="products-title">Select a product/s and the desired plan</h2>
+        <p class="selection-instructions" id="selection-instructions">Click a product to select it, then choose Monthly or Annually to see its price. You can select multiple products.</p>
         <form id="product-selection" aria-label="Product and billing selection">
           <div class="plan-grid"><article class="product-card plan-card" aria-labelledby="growth-title">
+  <input class="product-toggle sr-only" id="select-growth" type="checkbox" name="products" value="growth" aria-describedby="selection-instructions growth-hint">
+  <label class="product-toggle-label sr-only" for="select-growth">Select Growth</label>
   <header class="card-heading"><h2 id="growth-title">Growth </h2><p>For professional websites that aren’t business critical.</p></header>
   <div class="card-content"><p class="list-heading">Everything in Hobby, and:</p><ul class="feature-list">
   <li><i class="icon icon-check" aria-hidden="true"></i><span>Human Takeover</span></li>
@@ -65,14 +68,17 @@
   <li><i class="icon icon-check" aria-hidden="true"></i><span>Phone</span></li>
 </ul></div>
   <div class="card-pricing">
-  <h3>Pricing:</h3>
+  <h3>Pricing: <span class="selected-price" aria-live="polite" aria-atomic="true"></span></h3>
+  <p class="plan-hint" id="growth-hint" hidden>Choose Monthly or Annually to see your price.</p>
   <fieldset class="billing-options">
     <legend class="sr-only">Choose billing for Growth</legend>
-    <label class="billing-option"><input type="radio" name="growth-billing" value="monthly"><span>Monthly <strong class="billing-price">24.65</strong></span></label>
-    <label class="billing-option"><input type="radio" name="growth-billing" value="annually"><span>Annually <strong class="billing-price">246.50</strong></span></label>
+    <label class="billing-option"><input type="radio" name="growth-billing" value="monthly" data-price="24.65"><span>Monthly</span></label>
+    <label class="billing-option"><input type="radio" name="growth-billing" value="annually" data-price="246.50"><span>Annually</span></label>
   </fieldset>
 </div>
 </article><article class="product-card plan-card" aria-labelledby="business-title">
+  <input class="product-toggle sr-only" id="select-business" type="checkbox" name="products" value="business" aria-describedby="selection-instructions business-hint">
+  <label class="product-toggle-label sr-only" for="select-business">Select Business</label>
   <header class="card-heading"><h2 id="business-title">Business <span class="choice-badge">Top Choice</span></h2><p>For professional businesses focused on growth.</p></header>
   <div class="card-content"><p class="list-heading">Everything in Growth, and:</p><ul class="feature-list">
   <li><i class="icon icon-check" aria-hidden="true"></i><span>Shared Account Manager</span></li>
@@ -90,14 +96,17 @@
   <li><i class="icon icon-check" aria-hidden="true"></i><span>Phone</span></li>
 </ul></div>
   <div class="card-pricing">
-  <h3>Pricing:</h3>
+  <h3>Pricing: <span class="selected-price" aria-live="polite" aria-atomic="true"></span></h3>
+  <p class="plan-hint" id="business-hint" hidden>Choose Monthly or Annually to see your price.</p>
   <fieldset class="billing-options">
     <legend class="sr-only">Choose billing for Business</legend>
-    <label class="billing-option"><input type="radio" name="business-billing" value="monthly"><span>Monthly <strong class="billing-price">84.15</strong></span></label>
-    <label class="billing-option"><input type="radio" name="business-billing" value="annually"><span>Annually <strong class="billing-price">841.50</strong></span></label>
+    <label class="billing-option"><input type="radio" name="business-billing" value="monthly" data-price="84.15"><span>Monthly</span></label>
+    <label class="billing-option"><input type="radio" name="business-billing" value="annually" data-price="841.50"><span>Annually</span></label>
   </fieldset>
 </div>
 </article><article class="product-card plan-card" aria-labelledby="enterprise-title">
+  <input class="product-toggle sr-only" id="select-enterprise" type="checkbox" name="products" value="enterprise" aria-describedby="selection-instructions enterprise-hint">
+  <label class="product-toggle-label sr-only" for="select-enterprise">Select Enterprise</label>
   <header class="card-heading"><h2 id="enterprise-title">Enterprise </h2><p>For mission-critical applications where customer support is core to your business.</p></header>
   <div class="card-content"><p class="list-heading">Everything in Business, and:</p><ul class="feature-list">
   <li><i class="icon icon-check" aria-hidden="true"></i><span>Dedicated Account Manager</span></li>
@@ -116,16 +125,19 @@
   <li><i class="icon icon-check" aria-hidden="true"></i><span>Phone</span></li>
 </ul></div>
   <div class="card-pricing">
-  <h3>Pricing:</h3>
+  <h3>Pricing: <span class="selected-price" aria-live="polite" aria-atomic="true"></span></h3>
+  <p class="plan-hint" id="enterprise-hint" hidden>Choose Monthly or Annually to see your price.</p>
   <fieldset class="billing-options">
     <legend class="sr-only">Choose billing for Enterprise</legend>
-    <label class="billing-option"><input type="radio" name="enterprise-billing" value="monthly"><span>Monthly <strong class="billing-price">339.15</strong></span></label>
-    <label class="billing-option"><input type="radio" name="enterprise-billing" value="annually"><span>Annually <strong class="billing-price">3391.50</strong></span></label>
+    <label class="billing-option"><input type="radio" name="enterprise-billing" value="monthly" data-price="339.15"><span>Monthly</span></label>
+    <label class="billing-option"><input type="radio" name="enterprise-billing" value="annually" data-price="3391.50"><span>Annually</span></label>
   </fieldset>
 </div>
 </article></div>
           <div class="addon-grid">
             <article class="product-card addon-card" aria-labelledby="branding-title">
+  <input class="product-toggle sr-only" id="select-branding" type="checkbox" name="products" value="branding" aria-describedby="selection-instructions branding-hint">
+  <label class="product-toggle-label sr-only" for="select-branding">Select Remove Branding Add-On</label>
               <header class="card-heading"><h2 id="branding-title">Remove Branding Add-On</h2><p>With the Remove Branding Add-on, you can fully customize your visitor experience to align with your brand, ensuring a seamless transition from your site to the app.</p></header>
               <div class="card-content"><p class="list-heading">Here’s what you can achieve with this powerful Add-on:</p><ul class="feature-list">
   <li><i class="icon icon-check" aria-hidden="true"></i><span>Remove or Customize Branding on the widget, ticketing emails, and chat transcripts, so your brand is the one they see and remember.</span></li>
@@ -134,15 +146,18 @@
   <li><i class="icon icon-check" aria-hidden="true"></i><span>White Label the Chat Page, Chat Link, and Popout Chat Widget with your own domain for a consistent URL that matches your brand.</span></li>
 </ul><p class="billing-note">This Add-on is billed per Property, allowing you to rebrand each one to reflect your unique identity.</p></div>
               <div class="card-pricing">
-  <h3>Pricing:</h3>
+  <h3>Pricing: <span class="selected-price" aria-live="polite" aria-atomic="true"></span></h3>
+  <p class="plan-hint" id="branding-hint" hidden>Choose Monthly or Annually to see your price.</p>
   <fieldset class="billing-options">
     <legend class="sr-only">Choose billing for Remove Branding Add-On</legend>
-    <label class="billing-option"><input type="radio" name="branding-billing" value="monthly"><span>Monthly <strong class="billing-price">24.65</strong></span></label>
-    <label class="billing-option"><input type="radio" name="branding-billing" value="annually"><span>Annually <strong class="billing-price">246.50</strong></span></label>
+    <label class="billing-option"><input type="radio" name="branding-billing" value="monthly" data-price="24.65"><span>Monthly</span></label>
+    <label class="billing-option"><input type="radio" name="branding-billing" value="annually" data-price="246.50"><span>Annually</span></label>
   </fieldset>
 </div>
             </article>
             <article class="product-card addon-card" aria-labelledby="video-title">
+  <input class="product-toggle sr-only" id="select-video" type="checkbox" name="products" value="video" aria-describedby="selection-instructions video-hint">
+  <label class="product-toggle-label sr-only" for="select-video">Select Video Voice</label>
               <header class="card-heading"><h2 id="video-title">Video Voice</h2><p>Easily assist your customers with Video Chat, Voice Calls, and 2-way screen sharing. Our solution works on all WebRTC-enabled browsers, providing fast, secure, and high-quality video.</p></header>
               <div class="card-content"><p class="list-heading">Supported Browsers:</p><ul class="feature-list">
   <li><i class="icon icon-check" aria-hidden="true"></i><span>Chrome, Opera, Firefox, Edge (88+), Safari:</span></li>
@@ -163,11 +178,12 @@
   <li><i class="icon icon-check" aria-hidden="true"></i><span>Screen sharing is not available on mobile devices, so users will need to be on a desktop browser to utilize this function.</span></li>
 </ul></div>
               <div class="card-pricing">
-  <h3>Pricing:</h3>
+  <h3>Pricing: <span class="selected-price" aria-live="polite" aria-atomic="true"></span></h3>
+  <p class="plan-hint" id="video-hint" hidden>Choose Monthly or Annually to see your price.</p>
   <fieldset class="billing-options">
     <legend class="sr-only">Choose billing for Video Voice</legend>
-    <label class="billing-option"><input type="radio" name="video-billing" value="monthly"><span>Monthly <strong class="billing-price">41.65</strong></span></label>
-    <label class="billing-option"><input type="radio" name="video-billing" value="annually"><span>Annually <strong class="billing-price">416.50</strong></span></label>
+    <label class="billing-option"><input type="radio" name="video-billing" value="monthly" data-price="41.65"><span>Monthly</span></label>
+    <label class="billing-option"><input type="radio" name="video-billing" value="annually" data-price="416.50"><span>Annually</span></label>
   </fieldset>
 </div>
             </article>
@@ -210,5 +226,102 @@
     </div>
   </footer>
   <a class="help-link" href="https://help.tawk.to/" aria-label="Visit the tawk.to Help Center"><i class="icon icon-comment-alt" aria-hidden="true"></i><span class="help-label">Need help?</span></a>
+
+  <div class="selection-toast" id="selection-toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script>
+    (() => {
+      const form = document.getElementById('product-selection');
+      const cards = [...form.querySelectorAll('.product-card')];
+      const toast = document.getElementById('selection-toast');
+      let toastTimer;
+      const previousPlans = new WeakMap();
+
+      const selected = card => card.querySelector('.product-toggle');
+      const plan = card => card.querySelector('.billing-option input:checked');
+      const pending = current => cards.find(card => card !== current && selected(card).checked && !plan(card));
+
+      function clearToast() {
+        clearTimeout(toastTimer);
+        toast.classList.remove('is-visible');
+        toast.textContent = '';
+      }
+
+      function warn(card) {
+        clearToast();
+        toast.textContent = `Please select Monthly or Annually for ${card.querySelector('.product-toggle-label').textContent.replace('Select ', '')} before choosing another product.`;
+        toast.classList.add('is-visible');
+        card.querySelector('.plan-hint').hidden = false;
+        toastTimer = setTimeout(clearToast, 6000);
+      }
+
+      function canActivate(card) {
+        const incomplete = pending(card);
+        if (incomplete && incomplete !== card) {
+          warn(incomplete);
+          return false;
+        }
+        return true;
+      }
+
+      function render(card) {
+        const isSelected = selected(card).checked;
+        const billing = plan(card);
+        previousPlans.set(card, billing);
+        card.classList.toggle('is-selected', isSelected);
+        card.querySelector('.plan-hint').hidden = !isSelected || Boolean(billing);
+        const price = card.querySelector('.selected-price');
+        price.textContent = isSelected && billing
+          ? `$${billing.dataset.price} Per ${billing.value === 'monthly' ? 'Month' : 'Year'}`
+          : '';
+      }
+
+      function toggle(card, checked) {
+        selected(card).checked = checked;
+        if (!checked) card.querySelectorAll('.billing-option input').forEach(input => { input.checked = false; });
+        render(card);
+        clearToast();
+      }
+
+      form.addEventListener('click', event => {
+        const card = event.target.closest('.product-card');
+        if (!card) return;
+        if (!canActivate(card)) {
+          event.preventDefault();
+          event.stopPropagation();
+          return;
+        }
+        if (event.target.closest('.product-toggle, .product-toggle-label, .billing-option')) return;
+        if (window.getSelection().toString()) return;
+        toggle(card, !selected(card).checked);
+      }, true);
+
+      form.addEventListener('change', event => {
+        const input = event.target;
+        const card = input.closest('.product-card');
+        if (!card) return;
+        if (!canActivate(card)) {
+          selected(card).checked = card.classList.contains('is-selected');
+          card.querySelectorAll('.billing-option input').forEach(option => {
+            option.checked = option === previousPlans.get(card);
+          });
+          render(card);
+          return;
+        }
+        if (input.classList.contains('product-toggle')) {
+          toggle(card, input.checked);
+        } else if (input.matches('.billing-option input')) {
+          selected(card).checked = true;
+          render(card);
+          clearToast();
+        }
+      });
+
+      form.addEventListener('reset', () => {
+        cards.forEach(card => toggle(card, false));
+        clearToast();
+      });
+      cards.forEach(render);
+    })();
+  </script>
 </body>
 </html>

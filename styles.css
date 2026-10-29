@@ -191,7 +191,7 @@ summary::-webkit-details-marker{display:none}
 .section-intro{margin-bottom:34px;font-size:21px;font-weight:400;line-height:1.4;text-align:center}
 .plan-grid,.addon-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
 .addon-grid{max-width:920px;margin:40px auto 0}
-.product-card{display:flex;flex-direction:column;min-width:0;padding:26px 20px 22px;border-radius:var(--radius);box-shadow:0 4px 12px #00000017;background:var(--white)}
+.product-card{position:relative;cursor:pointer;border:2px solid transparent;transition:border-color .15s ease;display:flex;flex-direction:column;min-width:0;padding:26px 20px 22px;border-radius:var(--radius);box-shadow:0 4px 12px #00000017;background:var(--white)}
 .card-heading h2{color:var(--heading-green);font-size:28px;line-height:1.3;font-weight:400;text-align:center}
 .card-heading p{margin-top:24px;line-height:1.6;text-align:center}
 .card-heading{margin-bottom:26px}
@@ -203,12 +203,11 @@ summary::-webkit-details-marker{display:none}
 .support-heading{margin-top:16px}
 .card-content{margin-bottom:28px}
 .card-pricing{margin-top:auto}
-.card-pricing h3{margin:0 0 38px;font-size:20px;line-height:1.4;font-weight:400}
+.card-pricing h3{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;min-height:56px;margin:0 0 16px;font-size:20px;line-height:1.4;font-weight:400}
 .billing-options{display:flex;align-items:center;justify-content:center;gap:6px}
 .billing-option{position:relative;display:flex;flex:0 1 98px;min-width:0;cursor:pointer}
 .billing-option input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
-.billing-option span{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:100%;min-height:70px;padding:8px 12px;border:2px solid var(--green);border-radius:4px;color:var(--action-green);background:var(--white);line-height:1.2;transition:color .15s ease,background-color .15s ease}
-.billing-price{display:block;font-size:18px;font-weight:700;line-height:1.2;font-variant-numeric:tabular-nums;white-space:nowrap}
+.billing-option span{display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;padding:8px 12px;border:2px solid var(--green);border-radius:4px;color:var(--action-green);background:var(--white);line-height:1.2;transition:color .15s ease,background-color .15s ease}
 .billing-option input:checked+span{color:var(--white);background:var(--action-green)}
 .billing-option:hover span{background:#eaf8ef}
 .billing-option input:checked+span,.billing-option input:checked:hover+span{background:var(--action-green)}
@@ -294,11 +293,11 @@ summary::-webkit-details-marker{display:none}
   .offer-hero h1{font-size:36px}
   .products-section{padding-left:24px;padding-right:24px}
   .product-card{padding:26px 20px 20px}
-  .billing-option span{min-height:70px}
+  .billing-option span{min-height:44px}
   .plan-card .card-heading{min-height:90px;margin-bottom:16px}
   .plan-card .card-heading p{margin-top:9px}
   .plan-card .support-heading{margin-top:10px}
-  .plan-card .card-pricing h3{margin-bottom:45px}
+  .plan-card .card-pricing h3{margin-bottom:16px}
   .support-heading+.feature-list{gap:0}
   .footer-columns{grid-template-columns:repeat(5,minmax(0,1fr));gap:30px}
   .chat-column{grid-column:auto;max-width:none}
@@ -358,3 +357,14 @@ summary::-webkit-details-marker{display:none}
   .help-link{right:16px;bottom:16px;width:54px;height:54px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+/* Product selection and billing feedback */
+.selection-instructions{max-width:760px;margin:-20px auto 30px;text-align:center;font-size:15px;line-height:1.6}
+.product-card.is-selected{border-color:var(--green)}
+.product-card:has(.product-toggle:focus-visible){outline:3px solid #1577b5;outline-offset:4px}
+.selected-price{color:#5360a8;font-weight:700;font-size:20px;line-height:1.4;font-variant-numeric:tabular-nums}
+.plan-hint{margin:0 0 14px;color:var(--action-green);font-size:14px;line-height:1.5}
+.plan-hint[hidden]{display:none}
+.selection-toast{position:fixed;left:50%;bottom:28px;z-index:100;transform:translateX(-50%);width:max-content;max-width:min(560px,calc(100% - 40px));padding:16px 22px;border-radius:6px;background:#26342d;color:#fff;box-shadow:0 4px 20px #0003;font-size:16px;line-height:1.5;visibility:hidden;opacity:0;transition:opacity .15s ease,visibility .15s ease;pointer-events:none}
+.selection-toast.is-visible{visibility:visible;opacity:1}
+@media(max-width:699px){.selection-toast{bottom:86px}.selection-instructions{font-size:16px;margin-top:-14px}}
